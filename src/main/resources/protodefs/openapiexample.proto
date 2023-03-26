@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package openapiexample;
+
+import "google/api/annotations.proto";
+
+import "google/protobuf/descriptor.proto";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "org.maz.grpc";
+
+message SampleDataResponse {
+  string id = 1;
+
+  string description = 2;
+
+  string product = 3;
+}
+
+service Openapiexample {
+  rpc GetSampleData ( google.protobuf.Empty ) returns ( SampleDataResponse ) {
+    option (google.api.http) = { get:"/sample"  };
+  }
+}
+

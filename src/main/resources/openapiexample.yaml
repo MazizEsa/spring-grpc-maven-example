@@ -1,0 +1,29 @@
+openapi: "3.0.0"
+info:
+  title: Example OpenAPI
+  version: 1.0.0
+paths:
+  /sample:
+    get:
+      operationId: getSampleData
+      summary: Get sample data. Basically dummy endpoint
+      responses:
+        200:
+          description: Response when everything a ok.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleDataResponse'
+
+
+components:
+  schemas:
+    SampleDataResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        product:
+          type: string
